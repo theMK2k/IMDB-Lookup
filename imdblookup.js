@@ -78,10 +78,11 @@ if (showUsage) {
 
     results.forEach(result => {
         table.push([
-            result.titleType,
+            result.tconst.includes('nm') ? 'person' : result.titleType,
             result.title,
             result.year,
-            result.tconst
+            result.tconst,
+            result.tconst.includes('tt') ? `https://www.imdb.com/title/${result.tconst}` : `https://www.imdb.com/name/${result.tconst}`
         ])
     })
 
